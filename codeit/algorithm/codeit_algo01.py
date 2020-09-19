@@ -1,4 +1,6 @@
 
+# Linear Search Algorism
+
 def linear_search(element, some_list):
     for i in some_list:
         if element == i:
@@ -11,3 +13,4 @@ print(linear_search(0, [2, 3, 5, 7, 11]))
 print(linear_search(5, [2, 3, 5, 7, 11]))
 print(linear_search(3, [2, 3, 5, 7, 11]))
 print(linear_search(11, [2, 3, 5, 7, 11]))
+d
