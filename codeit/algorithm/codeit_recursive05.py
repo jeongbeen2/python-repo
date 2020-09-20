@@ -1,9 +1,12 @@
 # n의 각 자릿수의 합을 리턴
 def sum_digits(n):
 
+    # Recursive Case
     if n > 10:
         m = n - ((n // 10) * 10)  # n%10 = m
         return m + sum_digits(n // 10)
+
+    # Base Case
     return n
 
 

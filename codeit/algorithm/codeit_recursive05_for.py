@@ -7,6 +7,7 @@ def sum_digits(n):
         for i in n_list:
             result += i
         return result
+
     return n
 
 
