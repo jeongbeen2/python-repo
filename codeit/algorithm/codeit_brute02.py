@@ -12,15 +12,18 @@ def distance(store1, store2):
 
 def closest_pair(coordinates):
     list_len = len(test_coordinates)
+    result = [coordinates[0], coordinates[1]]
     ranges = distance(test_coordinates[0], test_coordinates[1])
-    result = []
+
     for i in range(list_len):
         for j in range(i+1, list_len):
-            if ranges > distance(test_coordinates[i], test_coordinates[j]):
-                ranges = distance(test_coordinates[i], test_coordinates[j])
-                result.append(test_coordinates[i])
-                result.append(test_coordinates[j])
-    return result[-2:]
+            pick1, pick2 = test_coordinates[i], test_coordinates[j]
+            distances = distance(pick1, pick2)
+            if ranges > distances:
+                ranges = distances
+                result[0], result[1] = pick1, pick2
+    return result
+
 
     # 테스트
 test_coordinates = [(2, 3), (12, 30), (40, 50), (5, 1), (12, 10), (3, 4)]
