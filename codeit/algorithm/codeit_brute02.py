@@ -12,7 +12,7 @@ def distance(store1, store2):
 
 def closest_pair(coordinates):
     list_len = len(test_coordinates)
-    ranges = 50
+    ranges = distance(test_coordinates[0], test_coordinates[1])
     result = []
     for i in range(list_len):
         for j in range(i+1, list_len):
@@ -21,7 +21,6 @@ def closest_pair(coordinates):
                 result.append(test_coordinates[i])
                 result.append(test_coordinates[j])
     return result[-2:]
-
 
     # 테스트
 test_coordinates = [(2, 3), (12, 30), (40, 50), (5, 1), (12, 10), (3, 4)]
