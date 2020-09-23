@@ -1,7 +1,9 @@
 # n번째 피보나치 수를 리턴
 def fib(n):
+    # Recursive Case
     if n > 2:
         return fib(n - 1) + fib(n - 2)
+    # Base Case
     return 1
 
 

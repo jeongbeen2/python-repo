@@ -1,7 +1,10 @@
 # 1부터 n까지의 합을 리턴
 def triangle_number(n):
+    # Recursive Case
     if n >= 2:
         return n + triangle_number(n - 1)
+
+    # Base Case
     return 1
 
 
