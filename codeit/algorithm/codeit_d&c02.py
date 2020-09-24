@@ -2,7 +2,20 @@ def merge(list1, list2):
     merge_list = []
     i = j = 0
     while i < len(list1) and j < len(list2):
-        
+        if list1[i] < list2[j]:
+            merge_list.append(list1[i])
+            i += 1
+        else:
+            merge_list.append(list2[j])
+            j += 1
+    if i == len(list1):
+        merge_list += list2[j:]
+
+    elif j == len(list2):
+        merge_list += list1[i:]
+
+    return merge_list
+
 
 # 테스트
 print(merge([1], []))

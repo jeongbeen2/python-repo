@@ -14,16 +14,18 @@ def merge(list1, list2):
         merge_list += list1[i:]
     return merge_list
 
+
 # 합병 정렬
 def merge_sort(my_list):
-    if len(my_list)==1:
-        return my_list
     start = 0
     end = len(my_list)
-    mid = (start+end)//2
-    list_left,list_right = my_list[:mid],my_list[mid:]
-    return merge(merge_sort(list_left), merge_sort(list_right))
-    
+    if len(my_list) == 1:
+        return my_list
+    half = (start + end) // 2
+    left_list = my_list[:half]
+    right_list = my_list[half:]
+    return merge(merge_sort(left_list), merge_sort(right_list))
+
 
 # 테스트
 print(merge_sort([1, 3, 5, 7, 9, 11, 13, 11]))
