@@ -5,17 +5,18 @@ def swap_elements(my_list, index1, index2):
 
 # 퀵 정렬에서 사용되는 partition 함수
 def partition(my_list, start, end):
-    pivot = my_list[end]
+    i = start
+    b = start
+    p = end
 
-    i = 0
-    b = 0
-    for x in range(len(my_list)):
-        if pivot > my_list[x]:
-            swap_elements(my_list, x, b)
+    while i < p:
+        if my_list[i] < my_list[p]:
+            swap_elements(my_list, i, b)
             b += 1
         i += 1
-    swap_elements(my_list, b, my_list.index(pivot))
-    return my_list.index(pivot)
+    swap_elements(my_list, b, p)
+    p = b
+    return p
 
 
 # 테스트 1
